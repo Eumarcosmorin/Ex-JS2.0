@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex-004</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    
+    <div id="tudo">
+        <h1>Qual a sua idade?</h1>
+        
+        <div id="int">
+        </div>
+        <label for="p1">Em que ano você nasceu ?</label>
+        <div id="pergunta">
+            <input type="number" name="" id="p1">
+            <input id="bt" type="button" value="Calcular" onclick="calcular()">
+        </div>
+        
+        <img id="img" src="1.png" alt="duvida">
+        <h1 id="resposta"></h1>
+        <script>
+           var nome = window.prompt('Olá,qual seu nome?')
+           var regex = /^[A-Za-zÀ-ÿ\s]+$/;
+           if (!regex.test(nome)){
+            var nome = ('Corno Manso')
+            window.alert('Digita seu nome corno'
+            )
+           }
+           else{window.alert('Nome Salvo!')}
+           int.textContent = (`Olá ${nome} `)
+           int.classList.add("estilo-int");
+            var foto = "2.png";
+            var foto2 = "3.png";
+            var foto3 = "4.png";
+            var foto4 = "5.png";
+            function calcular(){
+                var idade = window.document.getElementById('p1')
+                idade = Number (idade.value)
+                var data = 2024 - idade;
+                if (/^\d{1,3}$/.test(idade)){
+                    window.alert('Numero invalido')
+        
+                    }
+
+                else if (idade <-0){
+
+                    window.alert('Numero invalido')
+
+                }
+                else if (/^\d{5}$/.test(idade)){
+                    window.alert('Numero invalido')
+                }
+                else if (idade > 2024) {
+        
+                    window.alert(' Só é valido ate o ano de 2024')
+                }
+                else if ( data < 1){
+                resposta.textContent = `Olá ${nome} voce não tem nem 1 ano de idade, acabou de nascer `
+                }
+                else if ( data < 10){
+                    resposta.textContent = `Olá ${nome} voce tem ${data} anos de idade é uma criança `
+                    document.getElementById("img").src = "2.png" ;
+                }
+                else if (data < 20){
+                   resposta.textContent = `Olá ${nome} voce tem ${data} anos de idade é um Jovem `
+                   document.getElementById("img").src = "3.png" ;
+                }
+                else if (data <59 ){
+                    resposta.textContent = `Olá ${nome} voce tem ${data} anos de idade é um Adulto `
+                    document.getElementById("img").src = "4.png" ;
+                }
+                else if (data < 90){
+                    resposta.textContent = `Olá ${nome} voce tem ${data} anos de idade é um Velho `
+                    document.getElementById("img").src = "5.png" ;
+                }
+                else if (data > 100) {
+                    resposta.textContent = `${nome} FOI DE "F" KKKKKKK `
+                    document.getElementById("img").src = "6.png" ;
+                }
+                else {
+                    window.alert('oooo ele achou um erro kkkkkk')
+                }
+        
+        
+        }
+        </script>
+    </div>
+    <p>@eumarcos_dev</p>
+</body>
+</html>
